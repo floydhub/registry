@@ -18,3 +18,5 @@ The module files are json formatted. It has the below fields:
 `repo`: URL public git repository
 
 `author_email`: Email address of the author
+
+`command`: Add command to run in the module
