@@ -5,9 +5,7 @@ version: 0.1
 repo: https://github.com/floydhub/textutil-build-vocab.git
 branch: master
 owner: floydhub@gmail.com
-command: "python buildvocab.py -i {{file}} -c {{text_cols}} -d {{delimiter}} -w {{max_words}} -f {{min_freq}} -header {{has_header}} -o {{output}} -ov {{vocab_map}} -of {{vocab_freq}} -os {{vocab_size}}
-
- -l1 {{label1}} -l2 {{label2}} -l3 {{label3}} -l4 {{label4}} -l5 {{label5}} -o {{labeled_data}}  -s {{shuffle_output}} -p {{label_position}}"
+command: "python buildvocab.py -i {{file}} -c {{text_cols}} -d {{delimiter}} -w {{max_words}} -f {{min_freq}} -header {{has_header}} -o {{output}} -ov {{vocab_map}} -of {{vocab_freq}} -os {{vocab_size}}"
 params:
     - name: text_cols
       type: str
