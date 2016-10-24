@@ -1,0 +1,38 @@
+name: Normalize Text
+description: >
+    Normalize the contents of a text file using a simple normalization scheme. It does the following:
+    1. Collapse multiple whitespaces
+    2. Add space before and after all punctuations(e.g. ` . `, ` , `)
+    3. Add space before apostrophes in word contractions (e.g. `I 've`)
+    4. Retain following characters, but replace all others with single space. Retains A-Z, a-z, 0-9 and punctuations (comma, exclamation, question, quote, tilde)
+id: XYkNhqBesJwbsJCeHoFVsK
+version: 0.1
+repo: https://github.com/floydhub/textutil-normalize-text.git
+branch: master
+owner: floydhub@gmail.com
+command: "python normalize.py -i {{file}} -c {{text_cols}} -d {{delimiter}} -header {{has_header}} -o {{norm_file}}"
+params:
+    - name: text_cols
+      type: str
+      default: 0
+      description: Comma-separated list of column indices with text to process
+    - name: delimiter
+      type: str
+      default: \t
+      description: Column delimiter
+    - name: has_header
+      type: bool
+      default: False
+      description: Does file have header row?
+inputs:
+    - name: file
+      type: text
+      description: Input text file to process
+outputs:
+    - name: norm_file
+      type: text
+      description: Output file with normalized text
+default_container: docker:python
+predecessor: 
+language: Python
+tags: [text, util, preprocessing]
