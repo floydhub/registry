@@ -14,12 +14,15 @@ params:
       min: 
       max: 
       enum:  
+      description: 
 inputs:
     - name: file
       type: text
+      description: 
 outputs:
     - name: shuff_file
       type: text
+      description: 
 default_container: docker:python
 predecessor: 
 language: Python
