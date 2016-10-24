@@ -9,38 +9,52 @@ command: "python labeldata.py -i1 {{f1}} -i2 {{f2}} -i3 {{f3}} -i4 {{f4}} -i5 {{
 params:
     - name: label1
       type: str
+      description: Label for rows in file 1
     - name: label2
       type: str
+      description: Label for rows in file 2
     - name: label3
       type: str
+      description: Label for rows in file 3
     - name: label4
       type: str
+      description: Label for rows in file 4
     - name: label5
       type: str
+      description: Label for rows in file 5
     - name: delimiter
       type: str
       default: \t
+      description: Column delimiter
     - name: shuffle_output
       type: bool
       default: True
+      description: Shuffle the order of rows in final output?
     - name: label_position
       type: str
       default: start
       enum: [start, end]
+      description: Position of the Label column. Can be either `start` or `end` of each row.
 inputs:
     - name: f1
       type: text
+      description: Text file 1
     - name: f2
       type: text
+      description: Text file 2
     - name: f3
       type: text
+      description: Text file 3
     - name: f4
       type: text
+      description: Text file 4
     - name: f5
       type: text
+      description: Text file 5
 outputs:
     - name: labeled_data
       type: text
+      description: Labeled output file
 default_container: docker:python
 predecessor: 
 language: Python
