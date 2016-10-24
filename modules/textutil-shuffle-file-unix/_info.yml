@@ -1,0 +1,18 @@
+name: Shuffle File Rows (Unix)
+description: Randomly shuffles the order of rows in a text file using the `shuf` unix command
+id: ona63vnsPMsbhowbZ3xG6R
+version: 0.1
+owner: floydhub@gmail.com
+command: "cat {{file}} | shuf > {{shuff_file}}"
+inputs:
+    - name: file
+      type: text
+      description: Input text file to shuffle
+outputs:
+    - name: shuff_file
+      type: text
+      description: Shuffled output text file
+default_container: docker:ubuntu
+predecessor: 
+language: Shell
+tags: [text, util]
