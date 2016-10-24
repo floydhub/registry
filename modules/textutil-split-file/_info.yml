@@ -1,0 +1,28 @@
+name: Split File into 2
+description: Split rows input file into 2 parts using the given ratio
+id: Kev9KtnkQuZgRAQgYWfTgY
+version: 0.1
+repo: https://github.com/floydhub/textutil-split-file.git
+branch: master
+owner: floydhub@gmail.com
+command: "bash split.sh -i {{file}} -r {{ratio}} -p1 {{part1}} -p2 {{part2}}"
+params:
+    - name: ratio
+      type: number
+      default: 0.5
+      description: Ratio (number between 0-1) for splitting file
+inputs:
+    - name: file
+      type: text
+      description: Input text file to split
+outputs:
+    - name: part1
+      type: text
+      description: Split file Part 1
+    - name: part2
+      type: text
+      description: Split file Part 2
+default_container: docker:ubuntu
+predecessor: 
+language: Shell
+tags: [text, util]
