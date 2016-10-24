@@ -1,0 +1,52 @@
+name: Build Vocab from Documents
+description: Builds vocabulary dictionary of tokens in raw documents and converts the raw text to vocab_ids. 
+id: PUR8NBsPUobqr8ajwrYJnV
+version: 0.1
+repo: https://github.com/floydhub/textutil-build-vocab.git
+branch: master
+owner: floydhub@gmail.com
+command: "python buildvocab.py -i {{file}} -c {{text_cols}} -d {{delimiter}} -w {{max_words}} -f {{min_freq}} -header {{has_header}} -o {{output}} -ov {{vocab_map}} -of {{vocab_freq}} -os {{vocab_size}}
+
+ -l1 {{label1}} -l2 {{label2}} -l3 {{label3}} -l4 {{label4}} -l5 {{label5}} -o {{labeled_data}}  -s {{shuffle_output}} -p {{label_position}}"
+params:
+    - name: text_cols
+      type: str
+      default: 0
+      description: Comma-separated list of column indices to process (build vocab and transform)
+    - name: delimiter
+      type: str
+      default: \t
+      description: Column delimiter
+    - name: max_words
+      type: int
+      default: -1
+      description: Max number of words in output sentences. Longer sentences are trimmed, shorter are padded.
+    - name: min_freq
+      type: int
+      default: 0
+      description: Min frequency for word to be included in vocab. All other words are treated as UNK
+    - name: has_header
+      type: bool
+      default: False
+      description: Does file have header row?
+inputs:
+    - name: file
+      type: text
+      description: Input text file to process
+outputs:
+    - name: output
+      type: text
+      description: Vocab-mapped output file
+    - name: vocab_map
+      type: text
+      description: Word to Vocab_Id mapping for all words in Vocab
+    - name: vocab_freq
+      type: text
+      description: Word to Frequency mapping for all words in Vocab
+    - name: vocab_size
+      type: text
+      description: Total number of words in Vocab
+default_container: docker:python
+predecessor: 
+language: Python
+tags: [text, util, preprocessing]
