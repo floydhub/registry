@@ -6,7 +6,7 @@ version: 0.1
 repo: https://github.com/floydhub/textutil-shuffle-file.git
 branch: master
 author_email: floydhub@gmail.com
-default_command: "python shuffle.py -i {{file}} -o {{shuff_file}} -header {{has_header}}"
+command: "python shuffle.py -i {{file}} -o {{shuff_file}} -header {{has_header}}"
 params:
     - name: has_header
       type: bool
