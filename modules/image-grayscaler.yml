@@ -1,5 +1,0 @@
-name: Image Grayscaler
-branch: master
-repo: https://github.com/floydhub/image-grayscaler.git
-author_email: narenst@gmail.com
-default_command: "echo Running grayscaler..."
