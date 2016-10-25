@@ -32,7 +32,7 @@ outputs:
     - name: norm_file
       type: text
       description: Output file with normalized text
-default_container: docker:python
+default_container: docker:python:2.7.12
 predecessor: 
 language: Python
 tags: [text, util, preprocessing]

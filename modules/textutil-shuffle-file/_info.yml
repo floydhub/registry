@@ -19,7 +19,7 @@ outputs:
     - name: shuff_file
       type: text
       description: Shuffled output text file
-default_container: docker:python
+default_container: docker:python:2.7.12
 predecessor: 
 language: Python
 tags: [text, util]

@@ -44,7 +44,7 @@ outputs:
     - name: vocab_size
       type: text
       description: Total number of words in Vocab
-default_container: docker:python
+default_container: docker:python:2.7.12
 predecessor: 
 language: Python
 tags: [text, util, preprocessing]
