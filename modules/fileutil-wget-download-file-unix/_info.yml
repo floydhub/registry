@@ -1,7 +1,7 @@
 name: wget Download File
 description: Downloads a remote file using the Unix wget command (unsecure)
 id: FCrdNfYYc7dU7XroAyHBNQ
-version: 0.2
+version: 0.1
 owner: floydhub@gmail.com
 command: "wget --output-document={{file}} --user={{username}} --password={{password}} --no-check-certificate {{url}} "
 params:
@@ -19,6 +19,6 @@ outputs:
       type: text
       description: Downloaded file
 default_container: docker:nuagebec/ubuntu
-predecessor: uEPoap975aXpRBFRPotCQh
+predecessor: 
 language: Shell
 tags: [file, util]
