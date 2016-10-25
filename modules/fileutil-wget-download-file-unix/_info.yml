@@ -1,0 +1,24 @@
+name: wget Download File
+description: Downloads a remote file using the Unix wget command
+id: uEPoap975aXpRBFRPotCQh
+version: 0.1
+owner: floydhub@gmail.com
+command: "wget --output-document={{file}} --user={{username}} --password={{password}} {{url}} "
+params:
+    - name: url
+      type: str
+      description: File URL to download
+    - name: username
+      type: str
+      description: Username (optional)
+    - name: password
+      type: str
+      description: Password (optional)
+outputs:
+    - name: file
+      type: text
+      description: Downloaded file
+default_container: docker:ubuntu
+predecessor: 
+language: Shell
+tags: [file, util]
