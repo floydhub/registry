@@ -18,7 +18,7 @@ outputs:
     - name: file
       type: text
       description: Downloaded file
-default_container: docker:ubuntu
+default_container: docker:nuagebec/ubuntu
 predecessor: uEPoap975aXpRBFRPotCQh
 language: Shell
 tags: [file, util]

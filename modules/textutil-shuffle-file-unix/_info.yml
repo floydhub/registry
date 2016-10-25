@@ -12,7 +12,7 @@ outputs:
     - name: shuff_file
       type: text
       description: Shuffled output text file
-default_container: docker:ubuntu
+default_container: docker:nuagebec/ubuntu
 predecessor: 
 language: Shell
 tags: [text, util]
