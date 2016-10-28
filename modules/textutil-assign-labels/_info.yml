@@ -1,11 +1,13 @@
 name: Assign Labels to Text Data
 description: Combines the text data present in multiple files and assigns a Label column to each row, depending on the source. All rows from a single file will be assigned the same label. This module can assign labels for up to 5 files. If there are less than 5 files to label, provide empty (dummy) files for the rest. 
-id: SKH3zbXpNLzpFaNZANnPVg
+id: SKH3zbXpNLzpFaNZANn000
+predecessor: 
 version: 0.1
+family_id: SKH3zbXpNLzpFaNZANnPVg 
 repo: https://github.com/floydhub/textutil-assign-labels.git
 branch: master
 owner: floydhub@gmail.com
-command: "python labeldata.py -i1 {{f1}} -i2 {{f2}} -i3 {{f3}} -i4 {{f4}} -i5 {{f5}} -l1 {{label1}} -l2 {{label2}} -l3 {{label3}} -l4 {{label4}} -l5 {{label5}} -o {{labeled_data}} -d {{delimiter}} -s {{shuffle_output}} -p {{label_position}}"
+command: python labeldata.py -i1 {{f1}} -i2 {{f2}} -i3 {{f3}} -i4 {{f4}} -i5 {{f5}} -l1 {{label1}} -l2 {{label2}} -l3 {{label3}} -l4 {{label4}} -l5 {{label5}} -o {{labeled_data}} -d {{delimiter}} -s {{shuffle_output}} -p {{label_position}}
 params:
     - name: label1
       type: str
@@ -56,6 +58,5 @@ outputs:
       type: text
       description: Labeled output file
 default_container: docker:python:2.7.12
-predecessor: 
 language: Python
 tags: [text, util, preprocessing]

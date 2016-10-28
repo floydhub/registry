@@ -1,20 +1,22 @@
 name: Shuffle File Rows
 description: >
     Randomly shuffles the order of rows in a text file
-id: EgtNveyrRyJZ8iGUBPfkMP
+id: EgtNveyrRyJZ8iGUBPf000
+predecessor:
 version: 0.1
+family_id: EgtNveyrRyJZ8iGUBPfkMP
 repo: https://github.com/floydhub/textutil-shuffle-file.git
 branch: master
 owner: floydhub@gmail.com
-command: "python shuffle.py -i {{file}} -o {{shuff_file}} -header {{has_header}}"
+command: python shuffle.py -i {{file}} -o {{shuff_file}} -header {{has_header}}
 params:
     - name: has_header
       type: bool
       default: False
       description: Does file have header row?
-      min: 
-      max: 
-      enum: 
+      min:
+      max:
+      enum:
 inputs:
     - name: file
       type: text
@@ -23,7 +25,6 @@ outputs:
     - name: shuff_file
       type: text
       description: Shuffled output text file
-default_container: docker:python
-predecessor: 
+default_container: docker:python:2.7.12 
 language: Python
 tags: [text, util]

@@ -5,12 +5,14 @@ description: >
     2. Add space before and after all punctuations(e.g. ` . `, ` , `)
     3. Add space before apostrophes in word contractions (e.g. `I 've`)
     4. Retain following characters, but replace all others with single space. Retains A-Z, a-z, 0-9 and punctuations (comma, exclamation, question, quote, tilde)
-id: XYkNhqBesJwbsJCeHoFVsK
+id: XYkNhqBesJwbsJCeHoF000
+predecessor:
 version: 0.1
+family_id: XYkNhqBesJwbsJCeHoFVsK
 repo: https://github.com/floydhub/textutil-normalize-text.git
 branch: master
 owner: floydhub@gmail.com
-command: "python normalize.py -i {{file}} -c {{text_cols}} -d {{delimiter}} -header {{has_header}} -o {{norm_file}}"
+command: python normalize.py -i {{file}} -c {{text_cols}} -d {{delimiter}} -header {{has_header}} -o {{norm_file}}
 params:
     - name: text_cols
       type: str
@@ -32,7 +34,6 @@ outputs:
     - name: norm_file
       type: text
       description: Output file with normalized text
-default_container: docker:python:2.7.12
-predecessor: 
+default_container: docker:python:2.7.12 
 language: Python
 tags: [text, util, preprocessing]

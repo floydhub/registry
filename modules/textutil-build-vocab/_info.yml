@@ -1,11 +1,13 @@
 name: Build Vocab from Documents
 description: Builds vocabulary dictionary of tokens in raw documents and converts the raw text to vocab_ids. 
-id: PUR8NBsPUobqr8ajwrYJnV
+id: PUR8NBsPUobqr8ajwrY000
+predecessor:
 version: 0.1
+family_id: PUR8NBsPUobqr8ajwrYJnV
 repo: https://github.com/floydhub/textutil-build-vocab.git
 branch: master
 owner: floydhub@gmail.com
-command: "python buildvocab.py -i {{file}} -c {{text_cols}} -d {{delimiter}} -w {{max_words}} -f {{min_freq}} -header {{has_header}} -o {{output}} -ov {{vocab_map}} -of {{vocab_freq}} -os {{vocab_size}}"
+command: python buildvocab.py -i {{file}} -c {{text_cols}} -d {{delimiter}} -w {{max_words}} -f {{min_freq}} -header {{has_header}} -o {{output}} -ov {{vocab_map}} -of {{vocab_freq}} -os {{vocab_size}}
 params:
     - name: text_cols
       type: str
@@ -45,6 +47,5 @@ outputs:
       type: text
       description: Total number of words in Vocab
 default_container: docker:python:2.7.12
-predecessor: 
 language: Python
 tags: [text, util, preprocessing]

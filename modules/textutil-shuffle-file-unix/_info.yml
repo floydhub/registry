@@ -1,9 +1,11 @@
 name: Shuffle File Rows (Unix)
 description: Randomly shuffles the order of rows in a text file using the `shuf` unix command
-id: ona63vnsPMsbhowbZ3xG6R
+id: ona63vnsPMsbhowbZ3x000
+predecessor:
 version: 0.1
+family_id: ona63vnsPMsbhowbZ3xG6R
 owner: floydhub@gmail.com
-command: "cat {{file}} | shuf > {{shuff_file}}"
+command: cat {{file}} | shuf > {{shuff_file}}
 inputs:
     - name: file
       type: text
@@ -12,7 +14,6 @@ outputs:
     - name: shuff_file
       type: text
       description: Shuffled output text file
-default_container: docker:nuagebec/ubuntu
-predecessor: 
+default_container: docker:nuagebec/ubuntu 
 language: Shell
 tags: [text, util]
