@@ -20,7 +20,7 @@ params:
       description: Comma-separated list of column indices with text to process
     - name: delimiter
       type: str
-      default: \t
+      default: '\t'
       description: Column delimiter
     - name: has_header
       type: bool

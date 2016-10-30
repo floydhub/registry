@@ -26,7 +26,7 @@ params:
       description: Label for rows in file 5
     - name: delimiter
       type: str
-      default: \t
+      default: '\t'
       description: Column delimiter
     - name: shuffle_output
       type: bool
