@@ -57,6 +57,6 @@ outputs:
     - name: labeled_data
       type: text
       description: Labeled output file
-default_container: docker:python:3.5.1
+default_container: docker:python:3.5.2
 language: Python
 tags: [text, util, preprocessing]
