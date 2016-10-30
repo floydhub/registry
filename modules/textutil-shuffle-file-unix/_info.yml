@@ -5,7 +5,7 @@ predecessor:
 version: 0.1
 family_id: ona63vnsPMsbhowbZ3xG6R
 owner: floydhub@gmail.com
-command: cat {{file}} | shuf > {{shuff_file}}
+command: shuf {{file}} --output={{shuff_file}}
 inputs:
     - name: file
       type: text
