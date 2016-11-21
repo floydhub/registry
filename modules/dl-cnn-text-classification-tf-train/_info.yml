@@ -1,0 +1,85 @@
+name: CNN Text Classification (Tensorflow) Train
+description: Training step for CNN Text Classification using Tensorflow
+id: cGng3qr8xUZ6Wn5UDHr000
+predecessor: 
+version: 0.1
+family_id: cGng3qr8xUZ6Wn5UDHrV79
+repo: https://github.com/floydhub/cnn-text-classification-tf.git
+branch: master
+owner: floydhub@gmail.com
+command: python cnn-train.py --train {{train}} --eval {{eval}} --vocab_size {{vocab_size}} --output_dir {{checkpoints_dir}} --summary_dir {{summaries_dir}} --embedding_dim {{embedding_dim}} --filter_sizes {{filter_sizes}} --num_filters {{num_filters}} --dropout_keep_prob {{dropout_keep_prob}} --l2_reg_lambda {{l2_reg_lambda}} --batch_size {{batch_size}} --num_epochs {{num_epochs}} --evaluate_every {{evaluate_every}} --checkpoint_every {{checkpoint_every}} --allow_soft_placement {{allow_soft_placement}} --log_device_placement {{log_device_placement}} -d {{delimiter}}
+
+params:
+    # Model Hyperparameters
+    - name: embedding_dim
+      type: int
+      default: 128
+      description: Dimensionality of character embedding
+    - name: filter_sizes
+      type: str
+      default: 3,4,5
+      description: Comma-separated filter sizes
+    - name: num_filters
+      type: int
+      default: 128
+      description: Number of filters per filter size
+    - name: dropout_keep_prob
+      type: float
+      default: 0.5
+      description: Dropout keep probability
+    - name: l2_reg_lambda
+      type: float
+      default: 0.0
+      description: L2 regularizaion lambda
+      
+    # Training Parameters
+    - name: batch_size
+      type: int
+      default: 64
+      description: Batch size
+    - name: num_epochs
+      type: int
+      default: 200
+      description: Number of training epochs
+    - name: evaluate_every
+      type: int
+      default: 100
+      description: Evaluate model on eval set after this many steps 
+    - name: checkpoint_every
+      type: int
+      default: 100
+      description: Save model after this many steps
+      
+    # Misc Parameters
+    - name: allow_soft_placement
+      type: bool
+      default: True
+      description: Allow device soft placement
+    - name: log_device_placement
+      type: bool
+      default: False
+      description: Log placement of ops on devices
+    - name: delimiter
+      type: str
+      default: \'\t\'
+      description: Column delimiter to parse input file
+inputs:
+    - name: train
+      type: text
+      description: Training data file
+    - name: eval
+      type: text
+      description: Evaluation data file
+    - name: vocab_size
+      type: text
+      description: File containing vocab size
+outputs:
+    - name: checkpoints_dir
+      type: dir
+      description: Directory with all model checkpoints
+    - name: summaries_dir
+      type: dir
+      description: Directory with all train and eval summaries
+default_container: file:Dockerfile
+language: Python
+tags: [dl, text, training, cnn, classification, tensorflow]
