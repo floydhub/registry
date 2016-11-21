@@ -1,8 +1,8 @@
 name: CNN Text Classification (Tensorflow) Train
 description: Training step for CNN Text Classification using Tensorflow
-id: cGng3qr8xUZ6Wn5UDHr000
+id: cGng3qr8xUZ6Wn5UDHr001
 predecessor: 
-version: 0.1
+version: 0.11
 family_id: cGng3qr8xUZ6Wn5UDHrV79
 repo: https://github.com/floydhub/cnn-text-classification-tf.git
 branch: master
