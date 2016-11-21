@@ -2,12 +2,12 @@ name: CNN Text Classification (Tensorflow) Train
 description: Training step for CNN Text Classification using Tensorflow
 id: cGng3qr8xUZ6Wn5UDHr001
 predecessor: 
-version: 0.11
+version: 0.12
 family_id: cGng3qr8xUZ6Wn5UDHrV79
 repo: https://github.com/floydhub/cnn-text-classification-tf.git
 branch: master
 owner: floydhub@gmail.com
-command: python cnn-train.py --train {{train}} --eval {{eval}} --vocab_size {{vocab_size}} --output_dir {{checkpoints_dir}} --summary_dir {{summaries_dir}} --embedding_dim {{embedding_dim}} --filter_sizes {{filter_sizes}} --num_filters {{num_filters}} --dropout_keep_prob {{dropout_keep_prob}} --l2_reg_lambda {{l2_reg_lambda}} --batch_size {{batch_size}} --num_epochs {{num_epochs}} --evaluate_every {{evaluate_every}} --checkpoint_every {{checkpoint_every}} --allow_soft_placement {{allow_soft_placement}} --log_device_placement {{log_device_placement}} -d {{delimiter}}
+command: python cnn-train.py -tr {{train}} -ev {{eval}} -vs {{vocab_size}} -o {{checkpoints_dir}} -os {{summaries_dir}} --embedding_dim {{embedding_dim}} --filter_sizes {{filter_sizes}} --num_filters {{num_filters}} --dropout_keep_prob {{dropout_keep_prob}} --l2_reg_lambda {{l2_reg_lambda}} --batch_size {{batch_size}} --num_epochs {{num_epochs}} --evaluate_every {{evaluate_every}} --checkpoint_every {{checkpoint_every}} --allow_soft_placement {{allow_soft_placement}} --log_device_placement {{log_device_placement}} -d {{delimiter}}
 
 params:
     # Model Hyperparameters
@@ -61,7 +61,7 @@ params:
       description: Log placement of ops on devices
     - name: delimiter
       type: str
-      default: "'\t'"
+      default: '\t'
       description: Column delimiter to parse input file
 inputs:
     - name: train
