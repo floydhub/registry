@@ -1,0 +1,29 @@
+name: Get Checkpoint Tensorflow
+description: >
+    Get a checkpoint from the checkpoints dir using a provided condition
+id: ECuBq5AzkAJ4RjLkd4p000
+predecessor:
+version: 0.1
+family_id: ECuBq5AzkAJ4RjLkd4pcv2
+repo: https://github.com/floydhub/dl-tf-get-checkpoint.git
+branch: master
+owner: floydhub@gmail.com
+command: python get_checkpoint.py -i {{checkpoints_dir}} -c {{choice}} -o {{checkpoint}}
+
+params:
+    - name: choice
+      type: str
+      default: latest
+      enum: [latest]
+      description: Method to choose checkpoint from dir
+inputs:
+    - name: checkpoints_dir
+      type: dir
+      description: Checkpoints dir
+outputs:
+    - name: checkpoint
+      type: file
+      description: Chosen checkpoint
+default_container: docker:tensorflow/tensorflow
+language: Python
+tags: [dl, util, tensorflow]
