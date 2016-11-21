@@ -1,6 +1,6 @@
 name: CNN Text Classification (Tensorflow) Train
 description: Training step for CNN Text Classification using Tensorflow
-id: cGng3qr8xUZ6Wn5UDHr001
+id: cGng3qr8xUZ6Wn5UDHr002
 predecessor: 
 version: 0.12
 family_id: cGng3qr8xUZ6Wn5UDHrV79
