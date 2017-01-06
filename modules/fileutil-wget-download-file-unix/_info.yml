@@ -1,8 +1,8 @@
 name: wget Download File
 description: Downloads a remote file using the Unix wget command (unsecure)
-id: FCrdNfYYc7dU7XroAyH001
-predecessor: FCrdNfYYc7dU7XroAyH000
-version: 0.1
+id: FCrdNfYYc7dU7XroAyH002
+predecessor: FCrdNfYYc7dU7XroAyH001
+version: 0.2
 family_id: FCrdNfYYc7dU7XroAyHBNQ
 owner: floydhub@gmail.com
 command: wget --output-document={{file}} --user={{username}} --password={{password}} --no-check-certificate {{url}}
