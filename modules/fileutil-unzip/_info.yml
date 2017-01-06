@@ -1,0 +1,24 @@
+name: Unzip
+description: Unzips a zip file using the Unix unzip command
+id: qdr4RLefdev35RqA7L7000
+predecessor: 
+version: 0.1
+family_id: qdr4RLefdev35RqA7L7b27
+owner: support@floydhub.com
+command: unzip -l {{zip_file}} {{regex_to_extract}} -d {{dir}}
+params:
+    - name: regex_to_extract
+      type: str
+      default: '*'
+      description: Regex to specify the paths from the zip file to extract. Example - 'testdir/*' (use single quotes)
+inputs:
+    - name: zip_file
+      type: file
+      description: Zip file
+outputs:
+    - name: dir
+      type: dir
+      description: Unzipped dir
+default_container: docker:floydhub/dl-base:latest
+language: Shell
+tags: [file, util]
