@@ -12,7 +12,7 @@ command: python cornelldata.py -i {{corpus_dir}} -d {{delimiter}} -o {{conversat
 params:
     - name: delimiter
       type: str
-      default: ''\t''
+      default: !!str ''\t''
       description: Column delimiter to parse input file
 inputs:
     - name: corpus_dir
