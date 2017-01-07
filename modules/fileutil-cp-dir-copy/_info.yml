@@ -5,7 +5,7 @@ predecessor: BYF4HsQvLckTjqYmN6B001
 version: 0.12
 family_id: BYF4HsQvLckTjqYmN6BGvd
 owner: support@floydhub.com
-command: cp {{input}}/{{copy_regex}} {{output}}
+command: cp -r {{input}}/{{copy_regex}} {{output}}
 params:
     - name: copy_regex
       type: str
