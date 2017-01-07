@@ -4,7 +4,7 @@ id: FCrdNfYYc7dU7XroAyH002
 predecessor: FCrdNfYYc7dU7XroAyH001
 version: 0.2
 family_id: FCrdNfYYc7dU7XroAyHBNQ
-owner: floydhub@gmail.com
+owner: support@floydhub.com
 command: wget --output-document={{file}} --user={{username}} --password={{password}} --no-check-certificate {{url}}
 params:
     - name: url

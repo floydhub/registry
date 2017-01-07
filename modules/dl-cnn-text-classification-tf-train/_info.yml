@@ -6,7 +6,7 @@ version: 0.12
 family_id: cGng3qr8xUZ6Wn5UDHrV79
 repo: https://github.com/floydhub/cnn-text-classification-tf.git
 branch: master
-owner: floydhub@gmail.com
+owner: support@floydhub.com
 command: python cnn-train.py -tr {{train}} -ev {{eval}} -vs {{vocab_size}} -o {{checkpoints_dir}} -os {{summaries_dir}} --embedding_dim {{embedding_dim}} --filter_sizes {{filter_sizes}} --num_filters {{num_filters}} --dropout_keep_prob {{dropout_keep_prob}} --l2_reg_lambda {{l2_reg_lambda}} --batch_size {{batch_size}} --num_epochs {{num_epochs}} --evaluate_every {{evaluate_every}} --checkpoint_every {{checkpoint_every}} --allow_soft_placement {{allow_soft_placement}} --log_device_placement {{log_device_placement}} -d {{delimiter}}
 
 params:

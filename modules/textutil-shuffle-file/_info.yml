@@ -6,7 +6,7 @@ version: 0.1
 family_id: EgtNveyrRyJZ8iGUBPfkMP
 repo: https://github.com/floydhub/textutil-shuffle-file.git
 branch: master
-owner: floydhub@gmail.com
+owner: support@floydhub.com
 command: python shuffle.py -i {{file}} -o {{shuff_file}} -header {{has_header}}
 params:
     - name: has_header

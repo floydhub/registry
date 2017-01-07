@@ -11,7 +11,7 @@ version: 0.1
 family_id: XYkNhqBesJwbsJCeHoFVsK
 repo: https://github.com/floydhub/textutil-normalize-text.git
 branch: master
-owner: floydhub@gmail.com
+owner: support@floydhub.com
 command: python normalize.py -i {{file}} -c {{text_cols}} -d {{delimiter}} -header {{has_header}} -o {{norm_file}}
 params:
     - name: text_cols

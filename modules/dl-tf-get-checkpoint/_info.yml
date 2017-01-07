@@ -7,7 +7,7 @@ version: 0.1
 family_id: ECuBq5AzkAJ4RjLkd4pcv2
 repo: https://github.com/floydhub/dl-tf-get-checkpoint.git
 branch: master
-owner: floydhub@gmail.com
+owner: support@floydhub.com
 command: python get_checkpoint.py -i {{checkpoints_dir}} -c {{choice}} -o {{checkpoint}}
 
 params:

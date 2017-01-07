@@ -6,7 +6,7 @@ version: 0.1
 family_id: SKH3zbXpNLzpFaNZANnPVg 
 repo: https://github.com/floydhub/textutil-assign-labels.git
 branch: master
-owner: floydhub@gmail.com
+owner: support@floydhub.com
 command: python labeldata.py -i1 {{f1}} -i2 {{f2}} -i3 {{f3}} -i4 {{f4}} -i5 {{f5}} -l1 {{label1}} -l2 {{label2}} -l3 {{label3}} -l4 {{label4}} -l5 {{label5}} -o {{labeled_data}} -d {{delimiter}} -s {{shuffle_output}} -p {{label_position}}
 params:
     - name: label1

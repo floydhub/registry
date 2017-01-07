@@ -6,7 +6,7 @@ version: 0.1
 family_id: Kev9KtnkQuZgRAQgYWfTgY
 repo: https://github.com/floydhub/textutil-split-file.git
 branch: master
-owner: floydhub@gmail.com
+owner: support@floydhub.com
 command: bash split.sh -i={{file}} -r={{ratio}} -p1={{part1}} -p2={{part2}}
 params:
     - name: ratio
