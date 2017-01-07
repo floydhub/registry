@@ -1,11 +1,11 @@
 name: Unzip
 description: Unzips a zip file using the Unix unzip command
-id: qdr4RLefdev35RqA7L7000
-predecessor: 
-version: 0.1
+id: qdr4RLefdev35RqA7L7001
+predecessor: qdr4RLefdev35RqA7L7000
+version: 0.11
 family_id: qdr4RLefdev35RqA7L7b27
 owner: support@floydhub.com
-command: unzip -l {{zip_file}} {{regex_to_extract}} -d {{dir}}
+command: unzip {{zip_file}} {{regex_to_extract}} -d {{dir}}
 params:
     - name: regex_to_extract
       type: str
