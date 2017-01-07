@@ -1,11 +1,11 @@
 name: cp Dir Copy
 description: cp Unix command. Can be used to copy subset of input dir to output dir
-id: BYF4HsQvLckTjqYmN6B000
-predecessor:
-version: 0.1
+id: BYF4HsQvLckTjqYmN6B001
+predecessor: BYF4HsQvLckTjqYmN6B000
+version: 0.11
 family_id: BYF4HsQvLckTjqYmN6BGvd
 owner: support@floydhub.com
-command: cp {{input}}/{{copy_regex}} {{output}}
+command: cp '{{input}}/{{copy_regex}}' {{output}}
 params:
     - name: copy_regex
       type: str
