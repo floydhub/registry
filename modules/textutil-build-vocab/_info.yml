@@ -15,7 +15,7 @@ params:
       description: Comma-separated list of column indices to process (build vocab and transform)
     - name: delimiter
       type: str
-      default: '\t'
+      default: "'\\t'"
       description: Column delimiter
     - name: max_words
       type: int

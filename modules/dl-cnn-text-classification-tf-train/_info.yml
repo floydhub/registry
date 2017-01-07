@@ -61,7 +61,7 @@ params:
       description: Log placement of ops on devices
     - name: delimiter
       type: str
-      default: '\t'
+      default: "'\\t'"
       description: Column delimiter to parse input file
 inputs:
     - name: train
