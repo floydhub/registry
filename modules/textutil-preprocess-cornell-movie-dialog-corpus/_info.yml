@@ -1,0 +1,27 @@
+name: Preprocess Cornell Movie Dialogs Corpus
+description: Preprocess the Cornell Movie Dialog Corpus (http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html) and extracts conversation text pairs (source, target)
+id: EoHEPECcnx7tWkJzS3B000
+predecessor: 
+version: 0.1
+family_id: EoHEPECcnx7tWkJzS3BQgk
+repo: https://github.com/floydhub/textutil-preprocess-cornell-movie-corpus.git
+branch: master
+owner: support@floydhub.com
+command: python cornelldata.py -i {{corpus_dir}} -d {{delimiter}} -o {{conversations}} 
+
+params:
+    - name: delimiter
+      type: str
+      default: ''\t''
+      description: Column delimiter to parse input file
+inputs:
+    - name: corpus_dir
+      type: dir
+      description: dir containing the Cornell Movie Dialog corpus files
+outputs:
+    - name: conversations
+      type: text
+      description: Conversation text pairs extracted from the corpus
+default_container: docker:floydhub/python-base:3.6
+language: Python
+tags: [text, util, preprocess, corpus]
