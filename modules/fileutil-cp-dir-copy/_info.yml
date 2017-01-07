@@ -1,0 +1,23 @@
+name: cp Dir Copy
+description: cp Unix command. Can be used to copy subset of input dir to output dir
+id: buZxUA6rxTWXYxmpQkM000
+predecessor:
+version: 0.1
+family_id: BYF4HsQvLckTjqYmN6BGvd
+owner: support@floydhub.com
+command: cp {{input}}/{{copy_regex}} {{output}}
+params:
+    - name: copy_regex
+      type: str
+      description: Regex to specify files/dirs to copy to output
+inputs:
+    - name: input
+      type: dir
+      description: Input dir
+outputs:
+    - name: output
+      type: dir
+      description: Output dir
+default_container: docker:floydhub/buildpack-deps:latest
+language: Shell
+tags: [file, util]
