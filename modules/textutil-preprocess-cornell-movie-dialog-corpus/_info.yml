@@ -1,8 +1,8 @@
 name: Preprocess Cornell Movie Dialogs Corpus
 description: Preprocess the Cornell Movie Dialog Corpus (http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html) and extracts conversation text pairs (source, target)
-id: EoHEPECcnx7tWkJzS3B000
-predecessor: 
-version: 0.1
+id: EoHEPECcnx7tWkJzS3B001
+predecessor: EoHEPECcnx7tWkJzS3B000
+version: 0.2
 family_id: EoHEPECcnx7tWkJzS3BQgk
 repo: https://github.com/floydhub/textutil-preprocess-cornell-movie-corpus.git
 branch: master
