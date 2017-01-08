@@ -1,0 +1,28 @@
+name: iconv Convert File Encoding
+description: >
+    Uses the iconv Unix command to convert a file from the source encoding to the target.
+    To see the list of possible encodings, try `$ iconv --list` on your Unix machine
+id: cdcyM4rKJW7o3SHJ8dh000
+predecessor:
+version: 0.1
+family_id: cdcyM4rKJW7o3SHJ8dhUA7
+owner: support@floydhub.com
+command: iconv -f {{source_encoding}} -t {{target_encoding}} {{input}} -o {{output}}
+params:
+    - name: source_encoding
+      type: str
+      description: Source encoding of file
+    - name: target_encoding
+      type: str
+      description: Target encoding of file
+inputs:
+    - name: input
+      type: file
+      description: Input file
+outputs:
+    - name: output
+      type: file
+      description: Output file
+default_container: docker:floydhub/buildpack-deps:latest
+language: Shell
+tags: [file, util, preprocess]
