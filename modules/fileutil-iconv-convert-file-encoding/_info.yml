@@ -17,11 +17,11 @@ params:
       description: Target encoding of file
 inputs:
     - name: input
-      type: file
+      type: text
       description: Input file
 outputs:
     - name: output
-      type: file
+      type: text
       description: Output file
 default_container: docker:floydhub/buildpack-deps:latest
 language: Shell
