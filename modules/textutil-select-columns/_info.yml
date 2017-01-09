@@ -1,0 +1,35 @@
+name: Select Columns
+description: >
+    Selects the given columns from an input text file
+id: SKG6bY2i2vGXgyxr8hy000
+predecessor:
+version: 0.1
+family_id: SKG6bY2i2vGXgyxr8hyuFa
+repo: https://github.com/floydhub/textutil-select-columns.git
+branch: master
+owner: support@floydhub.com
+command: python selectcolumns.py -i {{file}} -c {{cols}} -d {{delimiter}} -header {{has_header}} -o {{output}}
+params:
+    - name: cols
+      type: str
+      default: 0
+      description: Comma-separated list of column indices to select
+    - name: delimiter
+      type: str
+      default: "'\\t'"
+      description: Column delimiter
+    - name: has_header
+      type: bool
+      default: False
+      description: Does file have header row?
+inputs:
+    - name: file
+      type: text
+      description: Input text file to process
+outputs:
+    - name: output
+      type: text
+      description: Output file with selected columns
+default_container: docker:floydhub/python-base:3.6
+language: Python
+tags: [text, util, preprocessing]
