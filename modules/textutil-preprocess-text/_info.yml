@@ -1,0 +1,83 @@
+name: Preprocess Text
+description: >
+    Preprocess the contents of a text file using Textacy's preprocess_text method
+id: go8pqyKsPA96Ra3owiG000
+predecessor:
+version: 0.1
+family_id: go8pqyKsPA96Ra3owiG4hY
+repo: https://github.com/floydhub/textutil-preprocess-text.git
+branch: master
+owner: support@floydhub.com
+command: python preprocess.py -i {{file}} -c {{text_cols}} -d {{delimiter}} -header {{has_header}} -o {{norm_file}} --fix_unicode {{fix_unicode}} --lowercase {{lowercase}} --transliterate {{transliterate}} --no_urls {{no_urls}} --no_emails {{no_emails}} --no_phone_numbers {{no_phone_numbers}} --no_numbers {{no_numbers}} --no_currency_symbols {{no_currency_symbols}} --no_punct {{no_punct}} --no_contractions {{no_contractions}} --no_accents {{no_accents}} --normalize_whitespace {{normalize_whitespace}}
+params:
+    - name: text_cols
+      type: str
+      default: 0
+      description: Comma-separated list of column indices with text to process
+    - name: delimiter
+      type: str
+      default: "'\\t'"
+      description: Column delimiter
+    - name: has_header
+      type: bool
+      default: False
+      description: Does file have header row?
+    - name: fix_unicode
+      type: bool
+      default: False
+      description: if True, fix “broken” unicode such as mojibake and garbled HTML entities
+    - name: lowercase
+      type: bool
+      default: False
+      description: if True, all text is lower-cased
+    - name: transliterate
+      type: bool
+      default: False
+      description: if True, convert non-ascii characters into their closest ascii equivalents
+    - name: no_urls
+      type: bool
+      default: False
+      description: if True, replace all URL strings with ‘URL‘
+    - name: no_emails
+      type: bool
+      default: False
+      description: if True, replace all email strings with ‘EMAIL‘
+    - name: no_phone_numbers
+      type: bool
+      default: False
+      description: if True, replace all phone number strings with ‘PHONE‘
+    - name: no_numbers
+      type: bool
+      default: False
+      description: if True, replace all number-like strings with ‘NUMBER‘
+    - name: no_currency_symbols
+      type: bool
+      default: False
+      description: if True, replace all currency symbols with their standard 3-letter abbreviations
+    - name: no_punct
+      type: bool
+      default: False
+      description: if True, remove all punctuation (replace with empty string)
+    - name: no_contractions
+      type: bool
+      default: False
+      description: if True, replace English contractions with their unshortened forms
+    - name: no_accents
+      type: bool
+      default: False
+      description: if True, replace all accented characters with unaccented versions; NB-if transliterate is True, this option is redundant
+    - name: normalize_whitespace
+      type: bool
+      default: False
+      description: if True, Fix unicode text that’s “broken” using ftfy; this includes mojibake, HTML entities and other code cruft, and non-standard forms for display purposes
+inputs:
+    - name: file
+      type: text
+      description: Input text file to process
+outputs:
+    - name: norm_file
+      type: text
+      description: Output file with normalized text
+default_container: docker:floydhub/textacy:latest
+language: Python
+tags: [text, util, preprocessing]
