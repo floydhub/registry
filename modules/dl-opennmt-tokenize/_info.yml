@@ -1,0 +1,40 @@
+name: OpenNMT Tokenize Text
+description: >
+    Tokenize text corpus for OpenNMT. For more information, see https://github.com/OpenNMT/OpenNMT/tree/master/tools.
+id: N4s7F6gtqtDw9JDSeo3000
+predecessor:
+version: 0.1
+family_id: N4s7F6gtqtDw9JDSeo3Mr3
+repo: https://github.com/OpenNMT/OpenNMT.gi
+branch: master
+owner: support@floydhub.com
+command: bash tokenize.sh -i={{file}} -mode={{mode}} -sep_annonate={{sep_annonate}} -case_feature={{case_feature}} -bpe_model={{bpe_model}} -o={{tokenized_file}}
+params:
+    - name: mode
+      type: str
+      default: conservative
+      enum: [aggressive, conservative]
+      description: In conservative mode, letters, numbers and '_' are kept in sequence, hyphens are accepted as part of tokens. Finally inner characters [.,] are also accepted (url, numbers).
+    - name: sep_annotate
+      type: bool
+      default: False
+      description: If set, add reversible separator mark to indicate separator-less or BPE tokenization (preference on symbol, then number, then letter)
+    - name: case_feature
+      type: bool
+      default: False
+      description: Generate case feature - and convert all tokens to lowercase
+    - name: bpe_model
+      type: bool
+      default: False
+      description: When set, activate BPE using the BPE model filename
+inputs:
+    - name: file
+      type: text
+      description: Input text file to tokenize
+outputs:
+    - name: tokenized_file
+      type: text
+      description: Output file with tokenized text
+default_container: docker:floydhub/opennmt
+language: Shell
+tags: [text, util, preprocessing, torch]
