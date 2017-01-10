@@ -1,0 +1,60 @@
+name: OpenNMT Preprocess Parallel Corpus
+description: >
+    Preprocess the parallel corpus using OpenNMT's preprocess.lua script. It generates 
+    vocabularies for both src and tgt files, as well as replaces tokens with word_ids.
+id: Z86UxkB4qfPbanwTgm4000
+predecessor: 
+version: 0.1
+family_id: Z86UxkB4qfPbanwTgm4TSU
+repo: https://github.com/OpenNMT/OpenNMT.git
+branch: master
+owner: support@floydhub.com
+command: th opennmt/preprocess.lua -train_src {{train_src}} -train_tgt {{train_tgt}} -valid_src {{valid_src}} -valid_tgt {{valid_tgt}} -src_vocab_size {{src_vocab_size}} -tgt_vocab_size {{tgt_vocab_size}} -src_seq_length {{src_seq_length}} -tgt_seq_length {{tgt_seq_length}} -shuffle {{shuffle}} -save_data {{preprocessed_dir}}
+# Unused inputs
+# src_vocab # Path to an existing source vocabulary
+# tgt_vocab # Path to an existing target vocabulary
+# features_vocabs_prefix # Path prefix to existing features vocabularies
+# config # Read options from this file
+
+params:
+    - name: src_vocab_size
+      type: int
+      default: 50000
+      description: Size of the source vocabulary
+    - name: tgt_vocab_size
+      type: int
+      default: 50000
+      description: Size of the target vocabulary
+    - name: src_seq_length
+      type: int
+      default: 50
+      description: Maximum source sequence length
+    - name: tgt_seq_length
+      type: int
+      default: 50
+      description: Maximum target sequence length
+    - name: shuffle
+      type: int
+      default: 1
+      enum: [0, 1]
+      description: Shuffle data
+inputs:
+    - name: train_src
+      type: text
+      description: Training source text file
+    - name: train_tgt
+      type: text
+      description: Training target text file
+    - name: valid_src
+      type: text
+      description: Validation source text file
+    - name: valid_tgt
+      type: text
+      description: Validation target text file
+outputs:
+    - name: preprocessed_dir
+      type: dir
+      description: Output dir that contains src.dict, tgt.dict (source and target vocabularies) and train.t7, a Torch serialized file containing vocabulary, training and validation data
+default_container: docker:floydhub/opennmt:latest
+language: Lua
+tags: [dl, text, preprocess, torch]
