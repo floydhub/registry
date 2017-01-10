@@ -5,7 +5,7 @@ id: N4s7F6gtqtDw9JDSeo3000
 predecessor:
 version: 0.1
 family_id: N4s7F6gtqtDw9JDSeo3Mr3
-repo: https://github.com/OpenNMT/OpenNMT.gi
+repo: https://github.com/OpenNMT/OpenNMT.git
 branch: master
 owner: support@floydhub.com
 command: bash tokenize.sh -i={{file}} -mode={{mode}} -sep_annonate={{sep_annonate}} -case_feature={{case_feature}} -bpe_model={{bpe_model}} -o={{tokenized_file}}
