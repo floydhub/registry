@@ -21,19 +21,19 @@ params:
       type: int
       default: 500
       description: Word embedding sizes
-    - name: residual
-      type: bool
-      default: False
-      description: Add residual connections between RNN layers
-    - name: brnn
-      type: bool
-      default: False
-      description: Use a bidirectional encoder
-    - name: brnn_merge
-      type: str
-      default: sum
-      enum: [concat, sum]
-      description: Merge action for the bidirectional hidden states - concat or sum
+    #- name: residual
+    #  type: bool
+    #  default: False
+    #  description: Add residual connections between RNN layers
+    #- name: brnn
+    #  type: bool
+    #  default: False
+    #  description: Use a bidirectional encoder
+    #- name: brnn_merge
+    #  type: str
+    #  default: sum
+    #  enum: [concat, sum]
+    #  description: Merge action for the bidirectional hidden states - concat or sum
     # Unused Hyperparameters
     # ======================
     # feat_merge
