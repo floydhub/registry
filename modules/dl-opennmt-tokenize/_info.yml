@@ -1,14 +1,14 @@
 name: OpenNMT Tokenize Text
 description: >
     Tokenize text corpus for OpenNMT. For more information, see https://github.com/OpenNMT/OpenNMT/tree/master/tools.
-id: N4s7F6gtqtDw9JDSeo3003
-predecessor: N4s7F6gtqtDw9JDSeo3002
-version: 0.13
+id: N4s7F6gtqtDw9JDSeo3004
+predecessor: N4s7F6gtqtDw9JDSeo3003
+version: 0.14
 family_id: N4s7F6gtqtDw9JDSeo3Mr3
 repo: https://github.com/floydhub/opennmt-tokenize.git
 branch: master
 owner: support@floydhub.com
-command: bash tokenize.sh -i={{file}} -mode={{mode}} -sep_annonate={{sep_annonate}} -case_feature={{case_feature}} -bpe_model={{bpe_model}} -o={{tokenized_file}}
+command: bash tokenize.sh 2>&1 -i={{file}} -mode={{mode}} -sep_annonate={{sep_annonate}} -case_feature={{case_feature}} -bpe_model={{bpe_model}} -o={{tokenized_file}}
 params:
     - name: mode
       type: str
