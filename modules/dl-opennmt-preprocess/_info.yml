@@ -2,12 +2,12 @@ name: OpenNMT Preprocess Parallel Corpus
 description: >
     Preprocess the parallel corpus using OpenNMT's preprocess.lua script. It generates 
     vocabularies for both src and tgt files, as well as replaces tokens with word_ids.
-id: UnXMFfvn7ywnwLZPEuV002
-predecessor: UnXMFfvn7ywnwLZPEuV001
-version: 0.12
+id: UnXMFfvn7ywnwLZPEuV003
+predecessor: UnXMFfvn7ywnwLZPEuV002
+version: 0.13
 family_id: UnXMFfvn7ywnwLZPEuVbRM
 owner: support@floydhub.com
-command: th preprocess.lua -train_src {{train_src}} -train_tgt {{train_tgt}} -valid_src {{valid_src}} -valid_tgt {{valid_tgt}} -src_vocab_size {{src_vocab_size}} -tgt_vocab_size {{tgt_vocab_size}} -src_seq_length {{src_seq_length}} -tgt_seq_length {{tgt_seq_length}} -shuffle {{shuffle}} -save_data {{preprocessed_dir}}/data
+command: th /opennmt/preprocess.lua -train_src {{train_src}} -train_tgt {{train_tgt}} -valid_src {{valid_src}} -valid_tgt {{valid_tgt}} -src_vocab_size {{src_vocab_size}} -tgt_vocab_size {{tgt_vocab_size}} -src_seq_length {{src_seq_length}} -tgt_seq_length {{tgt_seq_length}} -shuffle {{shuffle}} -save_data {{preprocessed_dir}}/data
 # Unused inputs
 # src_vocab # Path to an existing source vocabulary
 # tgt_vocab # Path to an existing target vocabulary
