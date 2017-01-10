@@ -2,10 +2,10 @@ name: OpenNMT Preprocess Parallel Corpus
 description: >
     Preprocess the parallel corpus using OpenNMT's preprocess.lua script. It generates 
     vocabularies for both src and tgt files, as well as replaces tokens with word_ids.
-id: Z86UxkB4qfPbanwTgm4004
-predecessor: Z86UxkB4qfPbanwTgm4002
-version: 0.14
-family_id: Z86UxkB4qfPbanwTgm4TSU
+id: UnXMFfvn7ywnwLZPEuV000
+predecessor: 
+version: 0.1
+family_id: UnXMFfvn7ywnwLZPEuVbRM
 repo: https://github.com/OpenNMT/OpenNMT.git
 branch: master
 owner: support@floydhub.com
