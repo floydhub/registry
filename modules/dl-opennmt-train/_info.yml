@@ -1,0 +1,141 @@
+name: OpenNMT Train Seq2Seq Model
+description: >
+    Train a Seq2Seq model using OpenNMT library's train.lua (https://github.com/OpenNMT/OpenNMT/blob/master/train.lua)
+id: hasaxq3WpWaPLzGZzx000
+predecessor: 
+version: 0.1
+family_id: hasaxq3WpWaPLzGZzx7Rb
+repo: https://github.com/OpenNMT/OpenNMT.git
+branch: master
+owner: support@floydhub.com
+command: th train.lua -data {{data}} -save_model {{save_model}} -layers {{layers}} -rnn_size {{rnn_size}} -word_vec_size {{word_vec_size}} -residual {{residual}} -brnn {{brnn}} -brnn_merge {{brnn_merge}} -max_batch_size {{max_batch_size}} -epochs {{epochs}} -param_init {{param_init}} -optim {{optim}} -learning_rate {{learning_rate}} -max_grad_norm {{max_grad_norm}} -dropout {{dropout}} -learning_rate_decay {{learning_rate_decay}} -start_decay_at {{start_decay_at}} -curriculum {{curriculum}} -gpuid {{gpuid}} -save_every {{save_every}} -report_every {{report_every}}
+params:
+    # Model Hyperparameters
+    - name: layers
+      type: int
+      default: 2
+      description: Number of layers in the LSTM encoder/decoder
+    - name: rnn_size
+      type: int
+      default: 500
+      description: Size of LSTM hidden states
+    - name: word_vec_size
+      type: int
+      default: 500
+      description: Word embedding sizes
+    - name: residual
+      type: bool
+      default: False
+      description: Add residual connections between RNN layers
+    - name: brnn
+      type: bool
+      default: False
+      description: Use a bidirectional encoder
+    - name: brnn_merge
+      type: str
+      default: sum
+      enum: [concat, sum]
+      description: Merge action for the bidirectional hidden states - concat or sum
+    # Unused Hyperparameters
+    # ======================
+    # feat_merge
+    # feat_vec_exponent
+    # feat_vec_size
+    # input_feed
+
+    # Optimization Options
+    - name: max_batch_size
+      type: int
+      default: 64
+      description: Maximum batch size
+    - name: epochs
+      type: int
+      default: 13
+      description: Number of training epochs
+    - name: param_init
+      type: float
+      default: 0.1
+      description: Parameters are initialized over uniform distribution with support
+    - name: optim
+      type: str
+      default: sgd
+      enum: [sgd, adagrad, adadelta, adam]
+      description: Optimization method
+    - name: learning_rate
+      type: float
+      default: 1
+      description: Starting learning rate. If adagrad/adadelta/adam is used, then this is the global learning rate. Recommended settings are - sgd = 1,adagrad = 0.1, adadelta = 1, adam = 0.0002
+    - name: max_grad_norm
+      type: float
+      default: 5
+      description: If the norm of the gradient vector exceeds this renormalize it to have the norm equal to max_grad_norm
+    - name: dropout
+      type: float
+      default: 0.3
+      description: Dropout probability. Dropout is applied between vertical LSTM stacks
+    - name: learning_rate_decay
+      type: float
+      default: 0.5
+      description: Decay learning rate by this much if (i) perplexity does not decrease on the validation set or (ii) epoch has gone past the start_decay_at_limit
+    - name: start_decay_at
+      type: int
+      default: 9
+      description: Start decay after this epoch
+    - name: curriculum
+      type: int
+      default: 0
+      description: For this many epochs, order the minibatches based on source sequence length. Sometimes setting this to 1 will increase convergence speed
+    
+    # Unused Optimization Options
+    # ===========================
+    # start_epoch
+    # start_iteration
+    # pre_word_vecs_enc
+    # pre_word_vecs_dec
+    # fix_word_vecs_enc
+    # fix_word_vecs_dec
+
+    # GPU Options
+    - name: gpuid
+      type: int
+      default: -1
+      description: 1-based identifier of the GPU to use. CPU is used when the option is < 1
+    # Unused GPU Options
+    # ==================
+    # nparallel
+    # async_parallel
+    # async_parallel_minbatch
+    # no_nccl
+    # disable_mem_optimization
+
+    # Bookkeeping
+    - name: save_every
+      type: int
+      default: 0
+      description: Save intermediate models every this many iterations within an epoch. If = 0, will not save models within an epoch.
+    - name: report_every
+      type: int
+      default: 50
+      description: Print stats every this many iterations within an epoch
+    # Unused Bookkeeping Options
+    # ==========================
+    # seed
+    # json_log
+
+    # Unused Input Data Options
+    # =========================
+    # continue
+inputs:
+    - name: data
+      type: file
+      description: Path to the training *-train.t7 file from preprocess.lua    
+    # Unused inputs
+    # =============
+    # train_from
+outputs:
+    - name: save_model
+      type: dir
+      description: Model filename (the model will be saved as <save_model>_epochN_PPL.t7 where PPL is the validation perplexity
+default_container: docker:floydhub/opennmt:latest
+language: Lua
+tags: [dl, text, training, seq2seq, torch]
