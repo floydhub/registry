@@ -9,7 +9,7 @@ family_id: Z86UxkB4qfPbanwTgm4TSU
 repo: https://github.com/OpenNMT/OpenNMT.git
 branch: master
 owner: support@floydhub.com
-command: th opennmt/preprocess.lua -train_src {{train_src}} -train_tgt {{train_tgt}} -valid_src {{valid_src}} -valid_tgt {{valid_tgt}} -src_vocab_size {{src_vocab_size}} -tgt_vocab_size {{tgt_vocab_size}} -src_seq_length {{src_seq_length}} -tgt_seq_length {{tgt_seq_length}} -shuffle {{shuffle}} -save_data {{preprocessed_dir}}
+command: cd /opennmt && th preprocess.lua -train_src {{train_src}} -train_tgt {{train_tgt}} -valid_src {{valid_src}} -valid_tgt {{valid_tgt}} -src_vocab_size {{src_vocab_size}} -tgt_vocab_size {{tgt_vocab_size}} -src_seq_length {{src_seq_length}} -tgt_seq_length {{tgt_seq_length}} -shuffle {{shuffle}} -save_data {{preprocessed_dir}}
 # Unused inputs
 # src_vocab # Path to an existing source vocabulary
 # tgt_vocab # Path to an existing target vocabulary
