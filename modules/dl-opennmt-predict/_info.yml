@@ -1,12 +1,12 @@
 name: OpenNMT Predict using Seq2Seq Model
 description: >
     Generate responses using Seq2Seq model trained using OpenNMT library's translate.lua (https://github.com/OpenNMT/OpenNMT/blob/master/translate.lua)
-id: rS4vkHco5cTabC5Sc6A000
-predecessor: 
-version: 0.1
+id: rS4vkHco5cTabC5Sc6A001
+predecessor: rS4vkHco5cTabC5Sc6A000
+version: 0.2
 family_id: rS4vkHco5cTabC5Sc6AgRg
 owner: support@floydhub.com
-command: th translate.lua -src {{src}} -model {{model}} -output {{output}}
+command: th /opennmt/translate.lua -src {{src}} -model {{model}} -output {{output}}
 inputs:
     - name: model
       type: file
