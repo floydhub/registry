@@ -1,0 +1,23 @@
+name: OpenNMT Predict using Seq2Seq Model
+description: >
+    Generate responses using Seq2Seq model trained using OpenNMT library's translate.lua (https://github.com/OpenNMT/OpenNMT/blob/master/translate.lua)
+id: rS4vkHco5cTabC5Sc6A000
+predecessor: 
+version: 0.1
+family_id: rS4vkHco5cTabC5Sc6AgRg
+owner: support@floydhub.com
+command: th translate.lua -src {{src}} -model {{model}} -output {{output}}
+inputs:
+    - name: model
+      type: file
+      description: Trained Seq2Seq model
+    - name: src
+      type: text
+      description: Source sequence to decode (one line per sentence)
+outputs:
+    - name: output
+      type: text
+      description: Path to output the predictions (each line will be the decoded sequence
+default_container: docker:floydhub/opennmt:latest
+language: Lua
+tags: [dl, text, prediction, seq2seq, torch]
