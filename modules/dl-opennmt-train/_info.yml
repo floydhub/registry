@@ -1,12 +1,12 @@
 name: OpenNMT Train Seq2Seq Model
 description: >
     Train a Seq2Seq model using OpenNMT library's train.lua (https://github.com/OpenNMT/OpenNMT/blob/master/train.lua)
-id: hasaxq3WpWaPLzGZzx004
-predecessor: hasaxq3WpWaPLzGZzx003
-version: 0.14
+id: hasaxq3WpWaPLzGZzx005
+predecessor: hasaxq3WpWaPLzGZzx004
+version: 0.15
 family_id: hasaxq3WpWaPLzGZzx7Rb
 owner: support@floydhub.com
-command: th /opennmt/train.lua -data {{data}} -save_model {{save_model}}/model -layers {{layers}} -rnn_size {{rnn_size}} -word_vec_size {{word_vec_size}} -residual {{residual}} -brnn {{brnn}} -brnn_merge {{brnn_merge}} -max_batch_size {{max_batch_size}} -epochs {{epochs}} -param_init {{param_init}} -optim {{optim}} -learning_rate {{learning_rate}} -max_grad_norm {{max_grad_norm}} -dropout {{dropout}} -learning_rate_decay {{learning_rate_decay}} -start_decay_at {{start_decay_at}} -curriculum {{curriculum}} -gpuid {{gpuid}} -save_every {{save_every}} -report_every {{report_every}}
+command: th /opennmt/train.lua -data {{data}} -save_model {{save_model}}/model -layers {{layers}} -rnn_size {{rnn_size}} -word_vec_size {{word_vec_size}} -max_batch_size {{max_batch_size}} -epochs {{epochs}} -param_init {{param_init}} -optim {{optim}} -learning_rate {{learning_rate}} -max_grad_norm {{max_grad_norm}} -dropout {{dropout}} -learning_rate_decay {{learning_rate_decay}} -start_decay_at {{start_decay_at}} -curriculum {{curriculum}} -gpuid {{gpuid}} -save_every {{save_every}} -report_every {{report_every}}
 params:
     # Model Hyperparameters
     - name: layers
