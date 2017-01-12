@@ -1,0 +1,25 @@
+name: OpenNMT Convert Model to CPU
+description: >
+    Converts an OpenNMT GPU model to CPU. For more information, see https://github.com/OpenNMT/OpenNMT/blob/master/tools/release_model.lua.
+id: Ts4HZ7FwZ5dzLjGiFF7000
+predecessor: 
+version: 0.1
+family_id: Ts4HZ7FwZ5dzLjGiFF7SD3
+owner: support@floydhub.com
+command: th /opennmt/tools/release_model.lua -model {{model}} -output_model {{output_model}} -gpuid {{gpuid}} -force
+params:
+    - name: gpuid
+      type: int
+      default: 1
+      description: 1-based identifier of the GPU to use. CPU is used when the option is < 1
+inputs:
+    - name: model
+      type: file
+      description: Trained model file
+outputs:
+    - name: output_model
+      type: file
+      description: Released model file
+default_container: docker:floydhub/opennmt
+language: Lua
+tags: [text, util, preprocessing, torch, lua]
