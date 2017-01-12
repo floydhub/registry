@@ -1,0 +1,39 @@
+name: Filter Seq2Seq Data
+description: >
+    Filter Seq2Seq sentence pairs to satisfy max word (soft) constraint
+id: nNH3HwtSzGkw83TrKkB000
+predecessor:
+version: 0.1
+family_id: nNH3HwtSzGkw83TrKkBKXf
+repo: https://github.com/floydhub/textutil-filter-seq2seq-data.git
+branch: master
+owner: support@floydhub.com
+command: python filter.py -i {{file}} -l {{language}} -d {{delimiter}} -m {{max_words}} -header {{has_header}} -o {{filt_file}}
+params:
+    - name: language
+      type: str
+      default: en
+      description: Language code to load Spacy language model
+    - name: max_words
+      type: int
+      default: 25
+      description: Maximum number of words in a src/tgt sentence
+    - name: delimiter
+      type: str
+      default: "'\\t'"
+      description: Column delimiter
+    - name: has_header
+      type: bool
+      default: False
+      description: Does file have header row?
+inputs:
+    - name: file
+      type: text
+      description: Input text file to process
+outputs:
+    - name: filt_file
+      type: text
+      description: Output file with filtered text
+default_container: docker:floydhub/spacy:latest
+language: Python
+tags: [text, util, preprocessing]
