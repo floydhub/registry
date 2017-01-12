@@ -1,12 +1,12 @@
 name: OpenNMT Predict using Seq2Seq Model
 description: >
     Generate responses using Seq2Seq model trained using OpenNMT library's translate.lua (https://github.com/OpenNMT/OpenNMT/blob/master/translate.lua)
-id: rS4vkHco5cTabC5Sc6A003
-predecessor: rS4vkHco5cTabC5Sc6A002
-version: 0.23
+id: rS4vkHco5cTabC5Sc6A004
+predecessor: rS4vkHco5cTabC5Sc6A003
+version: 0.24
 family_id: rS4vkHco5cTabC5Sc6AgRg
 owner: support@floydhub.com
-command: th /opennmt/translate.lua -src {{src}} -model {{model}} -output {{output}} -beam_size {{beam_size}} -n_best {{n_best}} -fallback_to_cpu {{fallback_to_cpu}} -gpuid {{gpuid}}
+command: th /opennmt/translate.lua -src {{src}} -model {{model}} -output {{output}} -beam_size {{beam_size}} -n_best {{n_best}} {{fallback_to_cpu}} -gpuid {{gpuid}}
 params:
     - name: beam_size
       type: int
@@ -18,7 +18,7 @@ params:
       description: If > 1, it will also output an n_best list of decoded sentences
     - name: fallback_to_cpu
       type: bool
-      default: True
+      default: -fallback_to_cpu
       description: If True, fallback to CPU if no GPU available
     - name: gpuid
       type: int
