@@ -7,6 +7,23 @@ version: 0.2
 family_id: rS4vkHco5cTabC5Sc6AgRg
 owner: support@floydhub.com
 command: th /opennmt/translate.lua -src {{src}} -model {{model}} -output {{output}}
+params:
+    - name: beam_size
+      type: int
+      default: 5
+      description: Beam size for search
+    - name: n_best
+      type: int
+      default: 1
+      description: If > 1, it will also output an n_best list of decoded sentences
+    - name: fallback_to_cpu
+      type: bool
+      default: True
+      description: If True, fallback to CPU if no GPU available
+    - name: gpuid
+      type: int
+      default: -1
+      description: 1-based identifier of the GPU to use. CPU is used when the option is < 1
 inputs:
     - name: model
       type: file
